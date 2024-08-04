@@ -80,12 +80,12 @@ export default function Sidebar() {
 					isSidebarCollapsed ? "px-5" : "px-8"
 				}`}
 			>
+				<WarehouseIcon className="w-8 h-8" />
 				<h1
 					className={`${
 						isSidebarCollapsed ? "hidden" : "block"
-					} font-extrabold text-2xl flex items-center`}
+					} font-extrabold text-2xl`}
 				>
-					<WarehouseIcon className="w-8 h-8 mr-4" />
 					DevOps Inventory
 				</h1>
 
