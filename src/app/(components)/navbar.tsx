@@ -1,22 +1,40 @@
 "use client";
 
+import { setIsDarkMode, setIsSidebarCollapsed } from "@/state";
 import {
 	BellIcon,
 	MenuIcon,
+	MoonIcon,
 	SearchIcon,
 	SettingsIcon,
 	SunIcon,
+	UserIcon,
 } from "lucide-react";
 import Link from "next/link";
+import { useAppDispatch, useAppSelector } from "../redux";
 
 export default function Navbar() {
+	const dispatch = useAppDispatch();
+	const isSidebarCollapsed = useAppSelector(
+		(state) => state.global.isSidebarCollapsed
+	);
+	const isDarkMode = useAppSelector((state) => state.global.isDarkMode);
+
+	const toggleSidebar = () => {
+		dispatch(setIsSidebarCollapsed(!isSidebarCollapsed));
+	};
+
+	const toggleDarkMode = () => {
+		dispatch(setIsDarkMode(!isDarkMode));
+	};
+
 	return (
 		<div className="flex justify-between items-center w-full mb-7">
 			{/* LEFT SIDE */}
 			<div className="flex justify-between items-center gap-5">
 				<button
 					className="px-3 py-3 bg-gray-100 rounded-full hover:bg-blue-100"
-					onClick={() => {}}
+					onClick={toggleSidebar}
 				>
 					<MenuIcon className="w-4 h-4" />
 				</button>
@@ -38,8 +56,12 @@ export default function Navbar() {
 			<div className="flex justify-between items-center gap-5">
 				<div className="hidden md:flex justify-between items-center gap-5">
 					<div>
-						<button onClick={() => {}}>
-							<SunIcon className="cursor-pointer text-gray-500" size={24} />
+						<button onClick={toggleDarkMode}>
+							{isDarkMode ? (
+								<SunIcon className="cursor-pointer text-gray-500" size={24} />
+							) : (
+								<MoonIcon className="cursor-pointer text-gray-500" size={24} />
+							)}
 						</button>
 					</div>
 					<div className="relative">
@@ -50,7 +72,7 @@ export default function Navbar() {
 					</div>
 					<hr className="w-0 h-7 border border-solid border-l border-gray-300 mx-3" />
 					<div className="flex items-center gap-3 cursor-pointer">
-						Image
+						<UserIcon className="w-8 h-8" />
 						<span className="font-semibold">John Doe</span>
 					</div>
 				</div>
