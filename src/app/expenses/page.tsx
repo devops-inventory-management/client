@@ -25,7 +25,7 @@ type AggregatedData = {
 	[category: string]: AggregatedDataItem;
 };
 
-const Expenses = () => {
+export default function ExpensesPage() {
 	const [activeIndex, setActiveIndex] = useState(0);
 	const [selectedCategory, setSelectedCategory] = useState("All");
 	const [startDate, setStartDate] = useState("");
@@ -184,6 +184,4 @@ const Expenses = () => {
 			</div>
 		</div>
 	);
-};
-
-export default Expenses;
+}
