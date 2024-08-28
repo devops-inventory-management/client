@@ -5,7 +5,9 @@ import {
 	TrendingDownIcon,
 	TrendingUpIcon,
 } from "lucide-react";
+import CardExpenseSummary from "./CardExpenseSummary";
 import CardPopularProducts from "./CardPopularProducts";
+import CardPurchaseSummary from "./CardPurchaseSummary";
 import CardSalesSummary from "./CardSalesSummary";
 import StatCard from "./StatCard";
 
@@ -14,8 +16,8 @@ export default function Dashboard() {
 		<div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 xl:overflow-auto gap-10 pb-4 custom-grid-rows">
 			<CardPopularProducts />
 			<CardSalesSummary />
-			{/* <CardPurchaseSummary /> */}
-			{/* <CardExpenseSummary /> */}
+			<CardPurchaseSummary />
+			<CardExpenseSummary />
 			<StatCard
 				title="Customer & Expenses"
 				primaryIcon={<PackageIcon className="text-blue-600 w-6 h-6" />}

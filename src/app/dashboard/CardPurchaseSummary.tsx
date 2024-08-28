@@ -1,3 +1,5 @@
+"use client";
+
 import { useGetDashboardMetricsQuery } from "@/state/api";
 import { TrendingDownIcon, TrendingUpIcon } from "lucide-react";
 import numeral from "numeral";

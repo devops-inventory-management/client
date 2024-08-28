@@ -29,7 +29,7 @@ export default function Page() {
 			<DataGrid
 				rows={users}
 				columns={columns}
-				getRowId={(row) => row.userId}
+				getRowId={(row) => row.id}
 				checkboxSelection
 				className="bg-white shadow rounded-lg border border-gray-200 mt-5 !text-gray-700"
 			/>

@@ -50,7 +50,7 @@ export default function InventoryPage() {
 			<DataGrid
 				rows={products}
 				columns={columns}
-				getRowId={(row) => row.productId}
+				getRowId={(row) => row.id}
 				checkboxSelection
 				className="bg-white shadow rounded-lg border border-gray-200 mt-5 !text-gray-700"
 			/>
