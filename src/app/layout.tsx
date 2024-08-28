@@ -6,7 +6,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Devops Inventory Management",
+	title: "DevOps Inventory Management",
 	description:
 		"Super simple inventory management for Technifutur DevOps 2023 - 2024",
 };
