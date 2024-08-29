@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
 	title: "DevOps Inventory Management",
 	description:
-		"Hey hey hey Super simple inventory management for Technifutur DevOps 2023 - 2024",
+		"Super simple inventory management for Technifutur DevOps 2023 - 2024",
 };
 
 export default function RootLayout({
