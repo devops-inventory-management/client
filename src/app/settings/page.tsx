@@ -27,7 +27,7 @@ export default function SettingsPage() {
 	};
 
 	return (
-		<div className="w-full">
+		<div className="w-full bg-red-500">
 			<Header name="User Settings" />
 			<div className="overflow-x-auto mt-5 shadow-md">
 				<table className="min-w-full bg-white rounded-lg">
