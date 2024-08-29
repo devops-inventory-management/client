@@ -4,7 +4,9 @@ import Header from "@/app/(components)/header";
 import Rating from "@/app/(components)/rating";
 import { useCreateProductMutation, useGetProductsQuery } from "@/state/api";
 import { PlusCircleIcon, SearchIcon } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
+import randomize from "../randomize";
 import CreateProductModal from "./CreateProductModal";
 
 type ProductFormData = {
@@ -79,8 +81,15 @@ export default function ProductsPage() {
 							className="border shadow rounded-md p-4 max-w-full w-full mx-auto"
 						>
 							<div className="flex flex-col items-center">
-								{/* TODO: RENDER IMAGE */}
-								IMAGE
+								{/* IMAGE */}
+								<Image
+									src={randomize().image}
+									alt={product.name}
+									width={150}
+									height={150}
+									priority
+									className="mb-3 rounded-2xl w-36 h-36 object-cover"
+								/>
 								<h3 className="text-lg text-gray-900 font-semibold">
 									{product.name}
 								</h3>

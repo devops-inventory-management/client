@@ -2,6 +2,8 @@
 
 import { useGetDashboardMetricsQuery } from "@/state/api";
 import { ShoppingBagIcon } from "lucide-react";
+import Image from "next/image";
+import randomize from "../randomize";
 
 export default function CardPopularProducts() {
 	const { data: dashboardMetrics, isLoading } = useGetDashboardMetricsQuery();
@@ -23,8 +25,15 @@ export default function CardPopularProducts() {
 								className="flex items-center justify-between gap-3 px-5 py-7 border-b"
 							>
 								<div className="flex items-center gap-3">
-									{/* TODO: RENDER IMAGE */}
-									IMAGE
+									{/* IMAGE */}
+									<Image
+										src={randomize().image}
+										alt={product.name}
+										width={48}
+										height={48}
+										priority
+										className="rounded-lg w-14 h-14"
+									/>
 									<div className="flex flex-col justify-between gap-1">
 										<div className="font-bold text-gray-700">
 											{product.name}
